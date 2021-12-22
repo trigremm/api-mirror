@@ -1,0 +1,14 @@
+# docker-compose build
+# docker-compose up 
+# docker-compose up --build
+# docker-compose up -d
+# docker-compose ps 
+version: "3.9"
+services:
+
+  django:
+    build: ./microservices/api_mirror
+    ports:
+      - "5555:80"
+    volumes:
+      - ./microservices/api_mirror/api_mirror:/app/api_mirror
